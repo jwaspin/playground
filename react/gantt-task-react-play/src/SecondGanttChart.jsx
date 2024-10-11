@@ -8,9 +8,8 @@ const tasks = [
     name: "Doctor 1",
     start: new Date(2024, 9, 11, 9, 0),
     end: new Date(2024, 9, 11, 14, 30),
-    type: "task",
-    progress: 20,
-    tooltip: "TAT: 1 min",
+    type: "project",
+    isDisabled: false,
     styles: { backgroundColor: "#82ca9d" },
   },
   {
@@ -20,6 +19,7 @@ const tasks = [
     end: new Date(2024, 9, 11, 13, 0),
     type: "task",
     progress: 50,
+    project: "1",
     styles: { backgroundColor: "#82ca9d" },
   },
   {
@@ -56,6 +56,7 @@ const tasks = [
     end: new Date(2024, 9, 11, 16, 0),
     type: "task",
     progress: 80,
+    project: "1",
     styles: { backgroundColor: "#82ca9d" },
   },
 ];
