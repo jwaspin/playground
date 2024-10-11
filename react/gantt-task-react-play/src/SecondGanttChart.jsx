@@ -1,44 +1,73 @@
 import { Gantt, ViewMode } from "gantt-task-react";
-import { useState } from "react";
 
 import "gantt-task-react/dist/index.css";
 
 const tasks = [
   {
-    id: "Call1",
-    name: "Call 1",
+    id: "Doctor1",
+    name: "Doctor 1",
     start: new Date(2024, 9, 11, 9, 0),
-    end: new Date(2024, 9, 11, 9, 30),
+    end: new Date(2024, 9, 11, 14, 30),
     type: "task",
-    progress: 100,
+    progress: 20,
+    tooltip: "TAT: 1 min",
     styles: { backgroundColor: "#82ca9d" },
   },
   {
-    id: "Processing1",
-    name: "Processing",
-    start: new Date(2024, 9, 11, 10, 0),
+    id: "Doctor2",
+    name: "Doctor 2",
+    start: new Date(2024, 9, 11, 12, 0),
+    end: new Date(2024, 9, 11, 13, 0),
+    type: "task",
+    progress: 50,
+    styles: { backgroundColor: "#82ca9d" },
+  },
+  {
+    id: "Doctor3",
+    name: "Doctor 3",
+    start: new Date(2024, 9, 11, 9, 0),
     end: new Date(2024, 9, 11, 10, 30),
     type: "task",
-    progress: 100,
-    styles: { backgroundColor: "#ffc658" },
-    dependencies: ["Call1"],
+    progress: 75,
+    styles: { backgroundColor: "#82ca9d" },
+  },
+  {
+    id: "Doctor4",
+    name: "Doctor 4",
+    start: new Date(2024, 9, 11, 13, 0),
+    end: new Date(2024, 9, 11, 15, 0),
+    type: "task",
+    progress: 60,
+    styles: { backgroundColor: "#82ca9d" },
+  },
+  {
+    id: "Doctor5",
+    name: "Doctor 5",
+    start: new Date(2024, 9, 11, 10, 0),
+    end: new Date(2024, 9, 11, 11, 30),
+    type: "task",
+    progress: 40,
+    styles: { backgroundColor: "#82ca9d" },
+  },
+  {
+    id: "Doctor6",
+    name: "Doctor 6",
+    start: new Date(2024, 9, 11, 15, 0),
+    end: new Date(2024, 9, 11, 16, 0),
+    type: "task",
+    progress: 80,
+    styles: { backgroundColor: "#82ca9d" },
   },
 ];
 
 export default function CustomGanttChart() {
-  const [currentTasks, setCurrentTasks] = useState(tasks);
-
-  const handleTaskChange = (task) => {
-    const updatedTasks = currentTasks.map((t) => (t.id === task.id ? task : t));
-    setCurrentTasks(updatedTasks);
-  };
-
   return (
     <div>
       <Gantt
         tasks={tasks}
         viewMode={ViewMode.Hour}
-        onDateChange={handleTaskChange}
+        columnWidth={60}
+        rtl={false}
       />
     </div>
   );
