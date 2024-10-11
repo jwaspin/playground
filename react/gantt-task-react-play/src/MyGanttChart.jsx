@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Gantt /* , Task, EventOption */ } from "gantt-task-react";
+import { Gantt } from "gantt-task-react";
 import "gantt-task-react/dist/index.css";
 
 const tasks = [
